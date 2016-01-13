@@ -1,0 +1,58 @@
+<div class="bs-example" data-example-id="table-within-panel">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">demo2</div>
+    <div class="panel-body">
+      
+    </div>
+    <h3>test1</h3>
+    <div class="row" style="padding-bottom:30px;">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">1</button>
+          </span>
+          <input ng-model="test1" type="text" class="form-control" placeholder="Search for..." ng-change="logtest1()">
+        </div><!-- /input-group -->
+        <div>显示数字:  {{test1}}</div>
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+    <h3>test2</h3>
+    <div class="row" style="padding-bottom:14px;">
+      <div class="col-lg-6">
+        <div ng-model="test2">显示数字{{test2}}</div>
+        <button ng-click="add()" class="btn btn-default" type="button">+1</button>
+      </div><!-- /.col-lg-6 -->
+    </div>
+    <h3>test3</h3>
+    <div class="row" style="padding-bottom:14px;">
+      <div class="panel panel-default" style="width:90%;margin:0 auto;">
+        <!-- Default panel contents -->
+        <div class="panel-heading">动态计算</div>
+        <div class="panel-body">
+          <p style="color:red;float:right;margin-right:150px;">总价格： {{ getTotal() }}</p>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>单价</th>
+              <th>数量</th>
+              <th>总价</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="good in test3">
+              <th scope="row">{{$index + 1}}</th>
+              <td ng-click="addPrice($index)">{{good.price}}</td>
+              <td ng-click="addNum($index)">{{good.num}}</td>
+              <td style="color:red;">{{good.price * good.num}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

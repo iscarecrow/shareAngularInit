@@ -1,0 +1,49 @@
+<div class="bs-example" data-example-id="table-within-panel">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading" ng-click="hello()">demo1</div>
+    <div class="panel-body">
+      <div>
+        Search: <input ng-model="query">
+      </div>
+      <div>
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="biz_order_id">订单号</option>
+        <option value="inventory_name">商品名称</option>
+      </select>
+      </div>
+    </div>
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>排序</th>
+          <th>订单号</th>
+          <th>订单状态</th>
+          <th>供应商名称</th>
+          <th>商品名称</th>
+          <th>交易号</th>
+          <th>堆糖ID</th>
+          <th>快递公司</th>
+          <th>运单号</th>
+          <th>创建时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="order in orders | filter:query | orderBy:orderProp">
+          <th scope="row">{{$index + 1}}</th>
+          <td>{{order.biz_order_id}}</td>
+          <td>{{order.order_status}}</td>
+          <td>{{order.supplier_name}}</td>
+          <td>{{order.inventory_name}}</td>
+          <td>{{order.out_pay_no}}</td>
+          <td>{{order.buyer_uid}}</td>
+          <td>{{order.logistics_name}}</td>
+          <td>{{order.logistics_ticket}}</td>
+          <td>{{order.gmt_create}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
