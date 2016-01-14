@@ -1,6 +1,22 @@
+环境依赖
+- node
+- npm
+
+安装
+
+根目录  npm install 
+
 启动方法
 python -m SimpleHTTPServer
 
+
+目录结构
+
+--- index.html
+----- templates
+----- js
+----- css
+----- mock
 
 
 demo1 内容

@@ -14,40 +14,7 @@ huginService.factory('huginService', function ($http, $q) {
             return data;
           });
         }
-      },
-      banner: {
-        getSetting: function() {
-          return $http.get('/api/banner/setting/').then(function(data) {
-            return data;
-          });
-        },
-        getBannerList: function(params){
-          return $http.get('/api/banner/list/',params).then(function(data) {
-            return data;
-          });
-        },
-        getDetail: function(params){
-          return $http.get('/api/banner/detail/',params).then(function(data) {
-            return data;
-          });
-        },
-        updateDetail: function(params){
-          return $http.put('/api/banner/update/',params).then(function(data) {
-            return data;
-          });
-        },
-        createDetail: function(params){
-          return $http.post('/api/banner/create/',params).then(function(data) {
-            return data;
-          });
-        },
-        updateSetting: function(params){
-          return $http.put('/api/banner/setting/',params).then(function(data) {
-            return data;
-          });
-        }
       }
-
     };
     return service;
   });
